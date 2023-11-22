@@ -11,7 +11,9 @@ connectDB();
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(cors());
 app.get("/", (req, res) => {
+  res.setHeader("Access-Control-Allow-Credentials", "true");
   res.status(200).json({ message: "welcome to QwikSupport" });
 });
 //CORES ISSUE
